@@ -46,21 +46,9 @@
                             <input class="w-100 border-0" type="text">
                         </div>
                         <div class="chat_list bg-white">
-                            <div class="chat_user d-flex">
-                                <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
-                                <p class="name">Michele</p>
-                            </div>
-                            <div class="chat_user d-flex">
-                                <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
-                                <p class="name">Michele</p>
-                            </div>
-                            <div class="chat_user d-flex">
-                                <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
-                                <p class="name">Michele</p>
-                            </div>
-                            <div class="chat_user d-flex">
-                                <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
-                                <p class="name">Michele</p>
+                            <div v-for="contact in contacts" class="chat_user d-flex">
+                                <img :src="getImageUrl(contact.avatar)" alt="" class="avatar_style">
+                                <p class="name">{{contact.name}}</p>
                             </div>
                         </div>
                     </div>
