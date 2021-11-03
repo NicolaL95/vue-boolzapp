@@ -4,20 +4,25 @@ body{
 
 .bg_green{
     background-color: #009688;
-    height: 150px;
+    height: 100px;
 }
 
 
 
 .container{
     height: 815px;
-    margin-top: -75px;
+    margin-top: -70px;
     background-color: white;
 }
 
 .user{
     background-color: #EAEAEA;
     padding: 10px 10px;
+   
+}
+
+.bor_bol{
+     border-right: 1px solid lightgray;
 }
 
 .user_info{
@@ -70,7 +75,8 @@ margin: 0;
 /*  */
 
 .chat_container{
-    height: 677px;
+    height: 667px;
+    background-color: white;
 }
 
 .chat_finder{
@@ -92,4 +98,28 @@ margin: 0;
 .name{
     padding: 0 10px;
     font-size: 1.3rem;
+}
+
+/*  */
+
+.chat_active{
+    background-image: url(./img/mine.jpg);
+    height: 670px;
+}
+
+/*  */
+
+.chat_input{
+    height: 75px;
+     background-color: #EAEAEA;
+     padding: 10px 0;
+}
+
+.input_container{
+    height: 100%;
+    padding: 0 15px;
+}
+
+.icon_size{
+    font-size: 1.7rem;
 }

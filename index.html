@@ -19,61 +19,75 @@
     <div id="app">
         <div class="bg_green"></div>
         <div class="container p-0">
-            <div class="col-3">
-                <div class="user d-flex justify-content-between">
-                    <div class="user_info">
-                        <img class="user_style" src="./img/avatar_io.jpg" alt="user image">
-                        <p>Nome Utente</p>
+            <div class="row">
+                <div class="col-3 p-0 bor_bol">
+                    <div class="user d-flex justify-content-between">
+                        <div class="user_info">
+                            <img class="user_style" src="./img/avatar_io.jpg" alt="user image">
+                            <p>Nome Utente</p>
+                        </div>
+                        <div class="user_icon">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt icon_p"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
-                    <div class="user_icon">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt icon_p"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                    <div class="desk_notify d-flex align-items-center justify-content-between">
+                        <div class="icon_container">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="alert_notify">
+                            <p class="alert_notify">Ricevi notifiche di nuovi messaggi</p>
+                            <p class="active_notify">Attiva notifiche desktop</p>
+                        </div>
+                    </div>
+                    <div class="chat_container">
+                        <div class="chat_finder">
+                            <input class="w-100 border-0" type="text">
+                        </div>
+                        <div class="chat_list bg-white">
+                            <div class="chat_user d-flex">
+                                <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
+                                <p class="name">Michele</p>
+                            </div>
+                            <div class="chat_user d-flex">
+                                <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
+                                <p class="name">Michele</p>
+                            </div>
+                            <div class="chat_user d-flex">
+                                <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
+                                <p class="name">Michele</p>
+                            </div>
+                            <div class="chat_user d-flex">
+                                <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
+                                <p class="name">Michele</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="desk_notify d-flex align-items-center justify-content-between">
-                    <div class="icon_container">
-                        <i class="fas fa-bell-slash"></i>
-                    </div>
-                    <div class="alert_notify">
-                        <p class="alert_notify">Ricevi notifiche di nuovi messaggi</p>
-                        <p class="active_notify">Attiva notifiche desktop</p>
-                    </div>
-                </div>
-                <div class="chat_container">
-                    <div class="chat_finder">
-                        <input class="w-100" type="text">
-                    </div>
-                    <div class="chat_list bg-white">
-                        <div class="chat_user d-flex">
-                            <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
-                            <p class="name">Michele</p>
+                <div class="col-9 p-0">
+                    <div class="user d-flex justify-content-between">
+                        <div class="user_info">
+                            <img class="user_style" src="./img/avatar_io.jpg" alt="user image">
+                            <p>Nome Utente</p>
                         </div>
-                        <div class="chat_user d-flex">
-                            <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
-                            <p class="name">Michele</p>
-                        </div>
-                        <div class="chat_user d-flex">
-                            <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
-                            <p class="name">Michele</p>
-                        </div>
-                        <div class="chat_user d-flex">
-                            <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
-                            <p class="name">Michele</p>
+                        <div class="user_icon">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip  icon_p"></i>
+                            <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-9">
-                <div class="user d-flex justify-content-between">
-                    <div class="user_info">
-                        <img class="user_style" src="./img/avatar_io.jpg" alt="user image">
-                        <p>Nome Utente</p>
+                    <div class="chat_active">
                     </div>
-                    <div class="user_icon">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt icon_p"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                    <div class="chat_input d-flex">
+                        <div class="input_container icon_size d-flex align-items-center">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <input class="w-100 border-0" type="text">
+                        <div class="input_container icon_size d-flex align-items-center">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+
                     </div>
                 </div>
             </div>
