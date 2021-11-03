@@ -1,0 +1,25 @@
+.bg_green{
+    background-color: #009688;
+    height: 100px;
+}
+
+.bg_gray{
+    background-color: #DCDBD3;
+}
+
+
+.container{
+    height: 815px;
+    margin-top: -75px;
+    background-color: black;
+}
+
+.black1{
+    background-color: black;
+    height: 100%;
+}
+
+.black{
+    background-color: blanchedalmond;
+    height: 100%;
+}
