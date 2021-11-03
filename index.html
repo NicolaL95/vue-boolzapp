@@ -17,15 +17,12 @@
 
 <body>
     <div id="app">
-        <div class="background">
-            <div class="bg_green"></div>
-            <div class="bg_gray"></div>
-        </div>
+        <div class="bg_green"></div>
         <div class="container p-0">
             <div class="col-3">
                 <div class="user d-flex justify-content-between">
                     <div class="user_info">
-                        <img class="avatar_style" src="./img/avatar_io.jpg" alt="user image">
+                        <img class="user_style" src="./img/avatar_io.jpg" alt="user image">
                         <p>Nome Utente</p>
                     </div>
                     <div class="user_icon">
@@ -43,9 +40,43 @@
                         <p class="active_notify">Attiva notifiche desktop</p>
                     </div>
                 </div>
-                <div class="chat_container"></div>
+                <div class="chat_container">
+                    <div class="chat_finder">
+                        <input class="w-100" type="text">
+                    </div>
+                    <div class="chat_list bg-white">
+                        <div class="chat_user d-flex">
+                            <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
+                            <p class="name">Michele</p>
+                        </div>
+                        <div class="chat_user d-flex">
+                            <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
+                            <p class="name">Michele</p>
+                        </div>
+                        <div class="chat_user d-flex">
+                            <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
+                            <p class="name">Michele</p>
+                        </div>
+                        <div class="chat_user d-flex">
+                            <img src="./img/avatar_1.jpg" alt="" class="avatar_style">
+                            <p class="name">Michele</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-9"></div>
+            <div class="col-9">
+                <div class="user d-flex justify-content-between">
+                    <div class="user_info">
+                        <img class="user_style" src="./img/avatar_io.jpg" alt="user image">
+                        <p>Nome Utente</p>
+                    </div>
+                    <div class="user_icon">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt icon_p"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>

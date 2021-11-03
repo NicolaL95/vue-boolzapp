@@ -1,22 +1,23 @@
-.bg_green{
-    background-color: #009688;
-    height: 100px;
+body{
+    background-color: #DCDBD3!important;
 }
 
-.bg_gray{
-    background-color: #DCDBD3;
+.bg_green{
+    background-color: #009688;
+    height: 150px;
 }
+
 
 
 .container{
     height: 815px;
     margin-top: -75px;
-    background-color: black;
+    background-color: white;
 }
 
 .user{
     background-color: #EAEAEA;
-    padding: 5px 10px;
+    padding: 10px 10px;
 }
 
 .user_info{
@@ -24,7 +25,7 @@
     align-items: end;
 }
 
-.avatar_style{
+.user_style{
     width: 50px;
     border-radius: 50%;
 }
@@ -63,4 +64,32 @@
 
 .alert_notify p{
 margin: 0;
+}
+
+
+/*  */
+
+.chat_container{
+    height: 677px;
+}
+
+.chat_finder{
+    padding: 5px;
+    background-color: #EAEAEA;
+}
+
+.chat_user{
+    height: 85px;
+}
+
+.avatar_style{
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    margin: auto 0;
+}
+
+.name{
+    padding: 0 10px;
+    font-size: 1.3rem;
 }
