@@ -42,3 +42,25 @@
 .icon_p{
     padding: 0 20px;
 }
+
+/*  */
+.desk_notify{
+    background-color: #8EDAFC;
+    padding: 15px;
+}
+
+.icon_container{
+    height: 100%;
+}
+
+.icon_container i{
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    color: #8EDAFC;
+}
+
+.alert_notify p{
+margin: 0;
+}
