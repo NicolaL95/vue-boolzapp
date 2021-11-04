@@ -78,7 +78,7 @@
                         <div class="input_container icon_size d-flex align-items-center">
                             <i class="far fa-smile"></i>
                         </div>
-                        <input id="input_active" class="w-100 border-0" type="text">
+                        <input v-on:keyup.enter="chatInsert(activeItems)" id="gg" class="w-100 border-0" type="text">
                         <div class="input_container icon_size d-flex align-items-center">
                             <i class="fas fa-microphone"></i>
                         </div>

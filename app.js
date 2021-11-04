@@ -98,14 +98,29 @@ const app = new Vue({
         changeChat(i) {
             this.activeItems = i;
 
-        }
+        },
+        chatInsert(i) {
+            var chatFinder = this.contacts[i].messages;
 
+            const tmp_a = {
+                date: '10/01/2020 15:50:00',
+                text: document.getElementById("gg").value,
+                status: 'sent'
+            }
+
+            chatFinder.push(tmp_a)
+
+            setTimeout(setReply, 1000);
+
+            function setReply() {
+                const autoReply = {
+                    date: '10/01/2020 15:50:00',
+                    text: 'ok',
+                    status: 'received'
+                }
+                chatFinder.push(autoReply);
+
+            }
+        }
     }
 })
-
-inputId = document.getElementById('input_active');
-inputId.addEventListener('keydown', function onEvent(e) {
-    if (e.keyCode === 13) {
-        console.log()
-    }
-});
