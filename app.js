@@ -86,12 +86,17 @@ const app = new Vue({
                     }
                 ],
             }
-        ]
+        ],
+        activeItems: 0
     },
     methods: {
         getImageUrl(num) {
             const imgUrl = `./img/avatar${num}.jpg`
-            return imgUrl
+            return imgUrl;
+        },
+
+        changeChat(i) {
+            this.activeItems = i;
 
         }
 
