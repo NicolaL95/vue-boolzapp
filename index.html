@@ -67,9 +67,14 @@
                         </div>
                     </div>
                     <div class="chat_active">
-                        <p v-for="message in contacts[activeItems].messages">{{message.text}}</p>
+                        <div v-for="message in contacts[activeItems].messages" class="message"
+                            :class="message.status == 'received' ? 'received' : 'sent'">
+                            <p>{{message.text}}</p>
+                            <p>{{message.date}}</p>
+                        </div>
+
                     </div>
-                    <div class="chat_input d-flex">
+                    <div class=" chat_input d-flex">
                         <div class="input_container icon_size d-flex align-items-center">
                             <i class="far fa-smile"></i>
                         </div>
