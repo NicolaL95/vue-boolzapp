@@ -102,3 +102,10 @@ const app = new Vue({
 
     }
 })
+
+inputId = document.getElementById('input_active');
+inputId.addEventListener('keydown', function onEvent(e) {
+    if (e.keyCode === 13) {
+        console.log()
+    }
+});
