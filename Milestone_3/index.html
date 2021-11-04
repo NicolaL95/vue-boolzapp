@@ -43,10 +43,10 @@
                     </div>
                     <div class="chat_container">
                         <div class="chat_finder">
-                            <input v-on:keyup="findUser()" id="chat_finder" class="w-100 border-0" type="text">
+                            <input class="w-100 border-0" type="text">
                         </div>
                         <div class="chat_list bg-white">
-                            <div v-for="(contact,index) in contacts" v-if="contact.visible" @click="changeChat(index)"
+                            <div v-for="(contact,index) in contacts" @click="changeChat(index)"
                                 class="chat_user d-flex">
                                 <img :src="getImageUrl(contact.avatar)" alt="" class="avatar_style">
                                 <p class="name">{{contact.name}}</p>
@@ -78,8 +78,7 @@
                         <div class="input_container icon_size d-flex align-items-center">
                             <i class="far fa-smile"></i>
                         </div>
-                        <input v-on:keyup.enter="chatInsert(activeItems)" id="input_chat" class="w-100 border-0"
-                            type="text">
+                        <input v-on:keyup.enter="chatInsert(activeItems)" id="gg" class="w-100 border-0" type="text">
                         <div class="input_container icon_size d-flex align-items-center">
                             <i class="fas fa-microphone"></i>
                         </div>

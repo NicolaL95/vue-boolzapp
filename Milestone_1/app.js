@@ -86,52 +86,14 @@ const app = new Vue({
                     }
                 ],
             }
-        ],
-        activeItems: 0
+        ]
     },
     methods: {
         getImageUrl(num) {
             const imgUrl = `./img/avatar${num}.jpg`
-            return imgUrl;
-        },
+            return imgUrl
 
-        changeChat(i) {
-            this.activeItems = i;
-
-        },
-        chatInsert(i) {
-            var chatFinder = this.contacts[i].messages;
-
-            const tmp_a = {
-                date: '10/01/2020 15:50:00',
-                text: document.getElementById("input_chat").value,
-                status: 'sent'
-            }
-
-            chatFinder.push(tmp_a)
-
-            setTimeout(setReply, 1000);
-
-            function setReply() {
-                const autoReply = {
-                    date: '10/01/2020 15:50:00',
-                    text: 'ok',
-                    status: 'received'
-                }
-                chatFinder.push(autoReply);
-
-            }
-            document.getElementById("input_chat").value = "";
-        },
-        findUser() {
-            this.contacts.forEach((element, index) => {
-                this.contacts[index].visible = true;
-                console.log(document.getElementById("chat_finder").value)
-                const finder = this.contacts[index].name.slice(0, Object.keys(document.getElementById("chat_finder").value).length)
-                if (document.getElementById("chat_finder").value.toLowerCase() != finder.toLowerCase()) {
-                    this.contacts[index].visible = false;
-                }
-            })
         }
+
     }
 })

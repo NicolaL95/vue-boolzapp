@@ -43,11 +43,10 @@
                     </div>
                     <div class="chat_container">
                         <div class="chat_finder">
-                            <input v-on:keyup="findUser()" id="chat_finder" class="w-100 border-0" type="text">
+                            <input class="w-100 border-0" type="text">
                         </div>
                         <div class="chat_list bg-white">
-                            <div v-for="(contact,index) in contacts" v-if="contact.visible" @click="changeChat(index)"
-                                class="chat_user d-flex">
+                            <div v-for="contact in contacts" class="chat_user d-flex">
                                 <img :src="getImageUrl(contact.avatar)" alt="" class="avatar_style">
                                 <p class="name">{{contact.name}}</p>
                             </div>
@@ -57,8 +56,8 @@
                 <div class="col-9 p-0">
                     <div class="user d-flex justify-content-between">
                         <div class="user_info">
-                            <img class="user_style" :src="getImageUrl(contacts[activeItems].avatar)" alt="user image">
-                            <p>{{contacts[activeItems].name}}</p>
+                            <img class="user_style" src="./img/avatar_io.jpg" alt="user image">
+                            <p>Nome Utente</p>
                         </div>
                         <div class="user_icon">
                             <i class="fas fa-search"></i>
@@ -67,19 +66,12 @@
                         </div>
                     </div>
                     <div class="chat_active">
-                        <div v-for="message in contacts[activeItems].messages" class="message"
-                            :class="message.status == 'received' ? 'received' : 'sent'">
-                            <p>{{message.text}}</p>
-                            <p>{{message.date}}</p>
-                        </div>
-
                     </div>
-                    <div class=" chat_input d-flex">
+                    <div class="chat_input d-flex">
                         <div class="input_container icon_size d-flex align-items-center">
                             <i class="far fa-smile"></i>
                         </div>
-                        <input v-on:keyup.enter="chatInsert(activeItems)" id="input_chat" class="w-100 border-0"
-                            type="text">
+                        <input class="w-100 border-0" type="text">
                         <div class="input_container icon_size d-flex align-items-center">
                             <i class="fas fa-microphone"></i>
                         </div>

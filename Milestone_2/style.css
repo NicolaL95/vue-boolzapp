@@ -77,7 +77,6 @@ margin: 0;
 .chat_container{
     height: 667px;
     background-color: white;
-    overflow-y: scroll;
 }
 
 .chat_finder{
@@ -106,22 +105,8 @@ margin: 0;
 .chat_active{
     background-image: url(./img/mine.jpg);
     height: 670px;
-    padding: 35px 45px 20px 45px;
-    overflow-y: scroll;
 }
 
-.sent{
-    text-align: right;
-    background-color: #D5F9BA;
-}
-
-.received{
-    text-align: left;
-    background-color: white;
-}
-.message{
-
-}
 /*  */
 
 .chat_input{

@@ -104,7 +104,7 @@ const app = new Vue({
 
             const tmp_a = {
                 date: '10/01/2020 15:50:00',
-                text: document.getElementById("input_chat").value,
+                text: document.getElementById("gg").value,
                 status: 'sent'
             }
 
@@ -121,17 +121,6 @@ const app = new Vue({
                 chatFinder.push(autoReply);
 
             }
-            document.getElementById("input_chat").value = "";
-        },
-        findUser() {
-            this.contacts.forEach((element, index) => {
-                this.contacts[index].visible = true;
-                console.log(document.getElementById("chat_finder").value)
-                const finder = this.contacts[index].name.slice(0, Object.keys(document.getElementById("chat_finder").value).length)
-                if (document.getElementById("chat_finder").value.toLowerCase() != finder.toLowerCase()) {
-                    this.contacts[index].visible = false;
-                }
-            })
         }
     }
 })
