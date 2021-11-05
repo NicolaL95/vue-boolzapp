@@ -96,6 +96,10 @@ const app = new Vue({
         },
 
         changeChat(i) {
+            this.contacts.forEach((element, index) => {
+                document.querySelectorAll(".chat_user")[index].classList.remove("activeitem")
+            });
+            document.querySelectorAll(".chat_user")[i].classList.add("activeitem")
             this.activeItems = i;
 
         },
@@ -113,8 +117,10 @@ const app = new Vue({
             setTimeout(setReply, 1000);
 
             function setReply() {
+                const today = new Date();
+
                 const autoReply = {
-                    date: '10/01/2020 15:50:00',
+                    date: dayjs(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()).format('DD/MM/YYYY') + ' ' + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
                     text: 'ok',
                     status: 'received'
                 }
@@ -135,3 +141,4 @@ const app = new Vue({
         }
     }
 })
+document.querySelector(".chat_user").classList.add("activeitem")
