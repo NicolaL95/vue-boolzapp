@@ -67,10 +67,10 @@
                         </div>
                     </div>
                     <div class="chat_active">
-                        <div v-for="message in contacts[activeItems].messages" class="message"
+                        <div v-for="message in contacts[activeItems].messages" class="message position-relative"
                             :class="message.status == 'received' ? 'received' : 'sent'">
-                            <p>{{message.text}}</p>
-                            <p>{{message.date}}</p>
+                            <p class="mb-0">{{message.text}}</p>
+                            <p class="font_date mb-0 position-absolute bottom-0">{{message.date}}</p>
                         </div>
 
                     </div>
