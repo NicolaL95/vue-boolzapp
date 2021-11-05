@@ -198,3 +198,12 @@ margin: 0;
 .c_input{
     Color: #6B7376; 
 }
+
+.last_access{
+    font-size: 0.8rem;
+    color:  #6B7376;
+}
+
+.lastmessagge{
+    padding: 0.5rem 10px 0;
+}

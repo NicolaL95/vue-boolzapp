@@ -7,6 +7,8 @@ const app = new Vue({
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
+                lastMessage: "",
+                lastDate: "",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -29,6 +31,8 @@ const app = new Vue({
                 name: 'Fabio',
                 avatar: '_2',
                 visible: true,
+                lastMessage: "",
+                lastDate: "",
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -51,6 +55,8 @@ const app = new Vue({
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
+                lastMessage: "",
+                lastDate: "",
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -73,6 +79,8 @@ const app = new Vue({
                 name: 'Luisa',
                 avatar: '_4',
                 visible: true,
+                lastMessage: "",
+                lastDate: "",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -114,6 +122,11 @@ const app = new Vue({
 
             chatFinder.push(tmp_a)
 
+
+
+
+            this.contacts[i].lastMessage = this.contacts[i].messages[this.contacts[i].messages.length - 1].text
+            this.contacts[i].lastDate = "-" + this.contacts[i].messages[this.contacts[i].messages.length - 1].date
             setTimeout(setReply, 1000);
 
             function setReply() {
@@ -125,9 +138,10 @@ const app = new Vue({
                     status: 'received'
                 }
                 chatFinder.push(autoReply);
-
             }
             document.getElementById("input_chat").value = "";
+            this.contacts[i].lastMessage = this.contacts[i].messages[this.contacts[i].messages.length - 1].text
+
         },
         findUser() {
             this.contacts.forEach((element, index) => {

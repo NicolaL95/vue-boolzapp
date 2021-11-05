@@ -53,7 +53,10 @@
                             <div v-for="(contact,index) in contacts" :class="contact.visible ? '' : 'dis_none'"
                                 @click="changeChat(index)" class="chat_user d_flex">
                                 <img :src="getImageUrl(contact.avatar)" alt="" class="avatar_style">
-                                <p class="name mt-1">{{contact.name}}</p>
+                                <div class="chat_data">
+                                    <p class="name mt-1 mb-0">{{contact.name}}</p>
+                                    <p class="lastmessagge">{{contact.lastMessage}} {{contact.lastDate}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -62,7 +65,10 @@
                     <div class="user d-flex justify-content-between">
                         <div class="user_info">
                             <img class="user_style" :src="getImageUrl(contacts[activeItems].avatar)" alt="user image">
-                            <p>{{contacts[activeItems].name}}</p>
+                            <div class="user_data">
+                                <p class="mb-0">{{contacts[activeItems].name}}</p>
+                                <p class="mb-0 last_access">Ultimo accesso alle:</p>
+                            </div>
                         </div>
                         <div class="user_icon">
                             <i class="fas fa-search"></i>
