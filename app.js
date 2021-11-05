@@ -9,7 +9,8 @@
  */
 const app = new Vue({
     el: "#app",
-
+    messageToRemove: "",
+    ownerMessage: "",
     data: {
         contacts: [
             {
@@ -168,6 +169,31 @@ const app = new Vue({
                     this.contacts[index].visible = false;
                 }
             })
+        },
+        handler: function (e, selectedMessage, selectedUser) {
+            menu = document.querySelector(".rightc")
+            e.preventDefault();
+            console.log(selectedMessage)
+            messageToRemove = selectedMessage;
+            ownerMessage = selectedUser
+            if (menu.style.display == 'block') {
+                menu.style.display = 'none';
+            }
+            else {
+                menu.style.display = 'block';
+                menu.style.left = e.pageX + "px";
+                menu.style.top = e.pageY + "px";
+            }
+
+        },
+        deleteMessage() {
+            app.contacts[ownerMessage].messages.splice(messageToRemove, 1)
+        },
+        removeMenu() {
+            menu = document.querySelector(".rightc")
+            if (menu.style.display == 'block') {
+                menu.style.display = 'none';
+            }
         }
     }
 })

@@ -21,7 +21,7 @@
 <body>
     <div id="app">
         <div class="bg_green"></div>
-        <div class="container p-0">
+        <div @click="removeMenu" class="container p-0">
             <div class="row">
                 <div class="col-3 p-0 bor_bol">
                     <div class="user d-flex justify-content-between">
@@ -80,8 +80,13 @@
                         </div>
                     </div>
                     <div class="chat_active d-flex flex-column">
-                        <div v-for="message in contacts[activeItems].messages" class="message position-relative"
-                            :class="message.status == 'received' ? 'received' : 'sent'">
+                        <ul class="rightc position-absolute ">
+                            <li>info message</li>
+                            <li @click="deleteMessage">delete message</li>
+                        </ul>
+                        <div v-for="(message,index) in contacts[activeItems].messages"
+                            @contextmenu="handler($event,index,activeItems)" class="
+                            message position-relative" :class="message.status == 'received' ? 'received' : 'sent'">
                             <p class="mb-0 pb_5">{{message.text}}</p>
                             <p class="font_date mb-0 bottom-0 position-absolute">{{message.date}}</p>
                         </div>

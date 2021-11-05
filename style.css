@@ -228,3 +228,16 @@ margin: 0;
     right: 10px;
     top: 0;
 }
+
+.rightc{
+    display: none;
+    z-index: 1;
+    background-color: #EAEAEA;
+      border-radius: 10px;
+}
+
+.rightc li{
+    padding: 10px;
+    list-style-type: none;
+    cursor: pointer;
+}
