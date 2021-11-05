@@ -1,0 +1,258 @@
+/* GLOBALI */
+body{
+    background-color: #DCDBD3!important;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+i{
+cursor: pointer;
+}
+
+/* IMPOSTAZIONI SFONDO */
+
+.bg_green{
+    background-color: #009688;
+    height: 100px;
+}
+
+
+/* GENERICHE */
+.container{
+    height: 815px;
+    margin-top: -70px;
+    background-color: white;
+}
+
+/* UTILITY */
+
+.bor_bol{
+     border-right: 1px solid lightgray;
+}
+
+.icon_p{
+    padding: 0 20px;
+}
+
+.dis_none{
+    display: none!important;
+}
+
+.d_flex{
+    display: flex;
+}
+
+.pb_5{
+    padding-bottom: 5px;
+}
+
+
+/* SIDEBAR */
+
+.user{
+    background-color: #EAEAEA;
+    padding: 10px 25px 10px 10px;
+    max-height: 70px;
+}
+
+.user_info{
+    display: flex;
+    align-items: end;
+}
+
+.user_style{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.user_icon{
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.user_icon i{
+    color: #B1B1B1;
+}
+
+.desk_notify{
+    background-color: #8EDAFC;
+    padding: 15px 20px;
+    max-height: 78px;
+    overflow: hidden;
+}
+
+.icon_container{
+    height: 100%;
+}
+
+.icon_container i{
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    color: #8EDAFC;
+}
+
+.alert_notify p{
+margin: 0;
+}
+
+.active_notify{
+     Color: #6B7376; 
+     text-decoration: underline black;
+     cursor: pointer;
+}
+
+
+/* SIDEBAR CHAT */
+
+.chat_container{
+    height: calc(100% - 188px);
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.chat_finder{
+    padding: 5px;
+    background-color: #EAEAEA;
+}
+
+.chat_finder input{
+    padding: 3px;
+}
+
+
+.chat_user{
+    height: 105px;
+    border-bottom: 1px solid #E9EBEB;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.chat_user:hover{
+    background-color:  #E9EBEB;
+}
+
+.activeitem{
+     background-color:  #E9EBEB;
+}
+
+
+
+.avatar_style{
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    margin: auto 0;
+}
+
+.name{
+    padding: 0 10px;
+    font-size: 1.3rem;
+}
+
+/* DETTAGLIO CHAT */
+
+.chat_active{
+    background-image: url(./img/mine.jpg);
+    height: 670px;
+    padding: 35px 45px 20px 45px;
+    overflow-y: scroll;
+}
+
+/* IMPOSTAZIONI MESSAGGI */
+
+.sent{
+    text-align: right;
+    background-color: #D5F9BA;
+    margin-left: auto;
+}
+
+.received{
+    text-align: left;
+    background-color: white;
+    margin-right: auto;
+}
+
+.message{
+    display: flex;
+    flex-direction: column;
+    min-width: 190px; 
+    margin-bottom: 15px;
+    padding: 15px 10px;
+    border-radius: 10px;
+}
+
+/* INPUT CHAT */
+.chat_input{
+    height: 75px;
+     background-color: #EAEAEA;
+     padding: 10px 0;
+}
+
+.input_container{
+    height: 100%;
+    padding: 5px 20px;
+}
+
+.icon_size{
+    font-size: 1.7rem;
+}
+
+
+.font_date{
+    font-size: 0.7rem;
+    right: 5px;
+    color:  #bbb9b9;
+}
+
+
+.inside_input{
+    top: 29%;
+    left: 1%;
+}
+
+.c_input{
+    Color: #6B7376; 
+}
+
+.last_access{
+    font-size: 0.8rem;
+    color:  #6B7376;
+}
+
+.lastmessagge{
+    padding: 0.5rem 10px 0;
+    max-height: 55px;
+    overflow: hidden;
+}
+
+#chat_finder{
+    padding-left: 10px;
+}
+
+#input_chat{
+    padding-left: 10px;
+}
+
+
+.lastdate{
+    right: 10px;
+    top: 0;
+}
+
+/* MENU */
+
+.rightc{
+    display: none;
+    z-index: 1;
+    background-color: #f5f5f5;
+      border-radius: 10px;
+    padding-left: 0;
+}
+
+.rightc li{
+    padding: 10px 20px;
+    list-style-type: none;
+    cursor: pointer;
+}

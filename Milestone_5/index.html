@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"
+        integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Vue-Boolzapp</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="bg_green"></div>
+        <div @click="removeMenu" class="container p-0">
+            <div class="row">
+                <div class="col-3 p-0 bor_bol">
+                    <div class="user d-flex justify-content-between">
+                        <div class="user_info">
+                            <img class="user_style" src="./img/avatar_io.jpg" alt="user image">
+                            <p>Nome Utente</p>
+                        </div>
+                        <div class="user_icon">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt icon_p"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <div class="desk_notify d-flex align-items-center justify-content-between">
+                        <div class="icon_container">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="alert_notify">
+                            <p class="alert_notify">Ricevi notifiche di nuovi messaggi</p>
+                            <p class="active_notify">Attiva notifiche desktop</p>
+                        </div>
+                    </div>
+                    <div class="chat_finder">
+                        <input v-on:keyup="findUser()" id="chat_finder" class="w-100 border-0" type="text"
+                            placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    <div class="chat_container">
+
+                        <div class="chat_list bg-white">
+                            <div v-for="(contact,index) in contacts" :class="contact.visible ? '' : 'dis_none'"
+                                @click="changeChat(index)" class="chat_user d_flex position-relative">
+                                <img :src="getImageUrl(contact.avatar)" alt="" class="avatar_style">
+                                <div class="chat_data">
+                                    <p class="name mt-1 mb-0">{{contact.name}}</p>
+                                    <p class="lastmessagge">{{contact.lastMessage}}</p>
+                                </div>
+                                <p class="lastdate last_access position-absolute">{{contact.lastDate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9 p-0">
+                    <div class="user d-flex justify-content-between">
+                        <div class="user_info">
+                            <img class="user_style" :src="getImageUrl(contacts[activeItems].avatar)" alt="user image">
+                            <div class="user_data">
+                                <p class="mb-0">{{contacts[activeItems].name}}</p>
+                                <p class="mb-0 last_access">Ultimo accesso alle:
+                                    {{contacts[activeItems].lastDateAccess}}</p>
+                            </div>
+                        </div>
+                        <div class="user_icon">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip  icon_p"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <div class="chat_active d-flex flex-column">
+                        <ul class="rightc position-absolute ">
+                            <li>Info message</li>
+                            <li @click="deleteMessage">Delete message</li>
+                        </ul>
+                        <div v-for="(message,index) in contacts[activeItems].messages"
+                            @contextmenu="handler($event,index,activeItems)" class="
+                            message position-relative" :class="message.status == 'received' ? 'received' : 'sent'">
+                            <p class="mb-0 pb_5">{{message.text}}</p>
+                            <p class="font_date mb-0 bottom-0 position-absolute">{{message.date}}</p>
+                        </div>
+
+                    </div>
+                    <div class=" chat_input d-flex">
+                        <div class="input_container icon_size d-flex align-items-center">
+                            <i class="far fa-smile c_input"></i>
+                        </div>
+                        <input v-on:keyup.enter="chatInsert(activeItems)" id="input_chat" class="w-100 border-0 "
+                            type="text" placeholder="Scrivi un messaggio">
+                        <div class="input_container icon_size d-flex align-items-center">
+                            <i class="fas fa-microphone c_input"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
