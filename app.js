@@ -113,11 +113,12 @@ const app = new Vue({
     },
 
     methods: {
+        /* Ottiene l'url dell'immagine partendo dalla reference nell'oggetto */
         getImageUrl(num) {
             const imgUrl = `./img/avatar${num}.jpg`
             return imgUrl;
         },
-
+        /* Cambia tutti i valori relativi all'utente nella DOM per visualizzare l'evento corrente */
         changeChat(i) {
             this.contacts.forEach((element, index) => {
                 document.querySelectorAll(".chat_user")[index].classList.remove("activeitem")
@@ -126,6 +127,8 @@ const app = new Vue({
             this.activeItems = i;
 
         },
+        /* Permette di inserire un nuovo messaggio nella chat -Il messaggio viene salvato nell'oggetto */
+        /* date: Genera correttamente la data nel rispetto del format imposto dall'esercizio */
         chatInsert(i) {
             var chatFinder = this.contacts[i].messages;
             const today = new Date();
@@ -142,6 +145,7 @@ const app = new Vue({
             this.contacts[i].lastMessage = this.contacts[i].messages[this.contacts[i].messages.length - 1].text
             this.contacts[i].lastDate = this.contacts[i].messages[this.contacts[i].messages.length - 1].date
             setTimeout(setReply, 1000);
+            /* Genera una risposta automatica assegnando la data nel rispetto del format imposto dall'esercizio */
             function setReply() {
 
 
@@ -160,6 +164,7 @@ const app = new Vue({
             document.getElementById("input_chat").value = "";
 
         },
+        /* Permette di trovare l'utente decidendo  */
         findUser() {
             this.contacts.forEach((element, index) => {
                 this.contacts[index].visible = true;
@@ -170,6 +175,7 @@ const app = new Vue({
                 }
             })
         },
+        /* rende visibile il menù per l'eliminazione del messaggio e setta i parametri da passare alla funzione per l'eleminazione vera e propria */
         handler: function (e, selectedMessage, selectedUser) {
             menu = document.querySelector(".rightc")
             e.preventDefault();
@@ -186,9 +192,12 @@ const app = new Vue({
             }
 
         },
+        /* elimina il messaggio basandosi sui due indici settati in precedenza */
         deleteMessage() {
             app.contacts[ownerMessage].messages.splice(messageToRemove, 1)
+            app.contacts[ownerMessage].lastMessage = "Questo messaggio è stato eliminato"
         },
+        /* permette di togliere la visualizzazione del menù se viene cliccato un qualsiasi elemento del DOM */
         removeMenu() {
             menu = document.querySelector(".rightc")
             if (menu.style.display == 'block') {

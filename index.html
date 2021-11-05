@@ -81,8 +81,8 @@
                     </div>
                     <div class="chat_active d-flex flex-column">
                         <ul class="rightc position-absolute ">
-                            <li>info message</li>
-                            <li @click="deleteMessage">delete message</li>
+                            <li>Info message</li>
+                            <li @click="deleteMessage">Delete message</li>
                         </ul>
                         <div v-for="(message,index) in contacts[activeItems].messages"
                             @contextmenu="handler($event,index,activeItems)" class="
