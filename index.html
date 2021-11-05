@@ -45,18 +45,20 @@
                         </div>
                     </div>
                     <div class="chat_finder">
-                        <input v-on:keyup="findUser()" id="chat_finder" class="w-100 border-0" type="text">
+                        <input v-on:keyup="findUser()" id="chat_finder" class="w-100 border-0" type="text"
+                            placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="chat_container">
 
                         <div class="chat_list bg-white">
                             <div v-for="(contact,index) in contacts" :class="contact.visible ? '' : 'dis_none'"
-                                @click="changeChat(index)" class="chat_user d_flex">
+                                @click="changeChat(index)" class="chat_user d_flex position-relative">
                                 <img :src="getImageUrl(contact.avatar)" alt="" class="avatar_style">
                                 <div class="chat_data">
                                     <p class="name mt-1 mb-0">{{contact.name}}</p>
-                                    <p class="lastmessagge">{{contact.lastMessage}} {{contact.lastDate}}</p>
+                                    <p class="lastmessagge">{{contact.lastMessage}}</p>
                                 </div>
+                                <p class="lastdate last_access position-absolute">{{contact.lastDate}}</p>
                             </div>
                         </div>
                     </div>
@@ -67,7 +69,8 @@
                             <img class="user_style" :src="getImageUrl(contacts[activeItems].avatar)" alt="user image">
                             <div class="user_data">
                                 <p class="mb-0">{{contacts[activeItems].name}}</p>
-                                <p class="mb-0 last_access">Ultimo accesso alle:</p>
+                                <p class="mb-0 last_access">Ultimo accesso alle:
+                                    {{contacts[activeItems].lastDateAccess}}</p>
                             </div>
                         </div>
                         <div class="user_icon">
@@ -76,11 +79,11 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
-                    <div class="chat_active">
-                        <div v-for="message in contacts[activeItems].messages" class="message "
+                    <div class="chat_active d-flex flex-column">
+                        <div v-for="message in contacts[activeItems].messages" class="message position-relative"
                             :class="message.status == 'received' ? 'received' : 'sent'">
-                            <p class="mb-0">{{message.text}}</p>
-                            <p class="font_date mb-0 bottom-0">{{message.date}}</p>
+                            <p class="mb-0 pb_5">{{message.text}}</p>
+                            <p class="font_date mb-0 bottom-0 position-absolute">{{message.date}}</p>
                         </div>
 
                     </div>
@@ -88,11 +91,8 @@
                         <div class="input_container icon_size d-flex align-items-center">
                             <i class="far fa-smile c_input"></i>
                         </div>
-                        <div class="w-100 position-relative">
-                            <input v-on:keyup.enter="chatInsert(activeItems)" id="input_chat"
-                                class="w-100 border-0 h-100" type="text">
-                            <p class="position-absolute inside_input c_input">Scrivi un messaggio</p>
-                        </div>
+                        <input v-on:keyup.enter="chatInsert(activeItems)" id="input_chat" class="w-100 border-0 "
+                            type="text" placeholder="Scrivi un messaggio">
                         <div class="input_container icon_size d-flex align-items-center">
                             <i class="fas fa-microphone c_input"></i>
                         </div>

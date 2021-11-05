@@ -1,3 +1,12 @@
+/* lettura dell'oggetto data:
+                name: nome dell'utente
+                avatar: numero collegato all'immagine dell'utente
+                visible: Indica se l'utente è visibile o meno nell'interfaccia grafica
+                lastMessage: ultimo messaggio ricevuto/inviato dall'/all' utente
+                lastDate: data relativa al lastmessage
+                lastDateAccess: ultima data in cui il bot ha risposto
+                messages: messaggi dell'utente
+ */
 const app = new Vue({
     el: "#app",
 
@@ -7,8 +16,9 @@ const app = new Vue({
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
-                lastMessage: "",
-                lastDate: "",
+                lastMessage: "Tutto fatto!",
+                lastDate: "10/01/2020 16:15:22",
+                lastDateAccess: "10/01/2020 16:15:22",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -31,8 +41,9 @@ const app = new Vue({
                 name: 'Fabio',
                 avatar: '_2',
                 visible: true,
-                lastMessage: "",
-                lastDate: "",
+                lastMessage: "Mi piacerebbe ma devo andare a fare la spesa.",
+                lastDate: "20/03/2020 16:35:00",
+                lastDateAccess: "20/03/2020 16:30:55",
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -55,8 +66,9 @@ const app = new Vue({
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
-                lastMessage: "",
-                lastDate: "",
+                lastMessage: "Ah scusa!",
+                lastDate: "28/03/2020 16:15:22",
+                lastDateAccess: "28/03/2020 16:15:22",
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -79,8 +91,9 @@ const app = new Vue({
                 name: 'Luisa',
                 avatar: '_4',
                 visible: true,
-                lastMessage: "",
-                lastDate: "",
+                lastMessage: "Si, ma preferirei andare al cinema",
+                lastDate: "10/01/2020 15:50:00",
+                lastDateAccess: "28/03/2020 16:15:22",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -97,6 +110,7 @@ const app = new Vue({
         ],
         activeItems: 0
     },
+
     methods: {
         getImageUrl(num) {
             const imgUrl = `./img/avatar${num}.jpg`
@@ -113,9 +127,10 @@ const app = new Vue({
         },
         chatInsert(i) {
             var chatFinder = this.contacts[i].messages;
+            const today = new Date();
 
             const tmp_a = {
-                date: '10/01/2020 15:50:00',
+                date: dayjs(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()).format('DD/MM/YYYY') + ' ' + today.getHours() + ":" + (today.getMinutes() > 9 ? today.getMinutes() : ("0" + today.getMinutes())) + ":" + (today.getSeconds() > 9 ? today.getSeconds() : ("0" + today.getSeconds())),
                 text: document.getElementById("input_chat").value,
                 status: 'sent'
             }
@@ -123,24 +138,25 @@ const app = new Vue({
             chatFinder.push(tmp_a)
 
 
-
-
             this.contacts[i].lastMessage = this.contacts[i].messages[this.contacts[i].messages.length - 1].text
-            this.contacts[i].lastDate = "-" + this.contacts[i].messages[this.contacts[i].messages.length - 1].date
+            this.contacts[i].lastDate = this.contacts[i].messages[this.contacts[i].messages.length - 1].date
             setTimeout(setReply, 1000);
-
             function setReply() {
-                const today = new Date();
+
 
                 const autoReply = {
-                    date: dayjs(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()).format('DD/MM/YYYY') + ' ' + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
+                    date: dayjs(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()).format('DD/MM/YYYY') + ' ' + today.getHours() + ":" + (today.getMinutes() > 9 ? today.getMinutes() : ("0" + today.getMinutes())) + ":" + (today.getSeconds() > 9 ? today.getSeconds() : ("0" + today.getSeconds())),
                     text: 'ok',
                     status: 'received'
                 }
                 chatFinder.push(autoReply);
+                app.contacts[i].lastMessage = autoReply.text;
+                app.contacts[i].lastDate = autoReply.date;
+                app.contacts[i].lastDateAccess = autoReply.date;
             }
+
+
             document.getElementById("input_chat").value = "";
-            this.contacts[i].lastMessage = this.contacts[i].messages[this.contacts[i].messages.length - 1].text
 
         },
         findUser() {

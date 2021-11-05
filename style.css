@@ -23,7 +23,7 @@ cursor: pointer;
 .user{
     background-color: #EAEAEA;
     padding: 10px 25px 10px 10px;
-   
+    max-height: 70px;
 }
 
 .bor_bol{
@@ -58,6 +58,8 @@ cursor: pointer;
 .desk_notify{
     background-color: #8EDAFC;
     padding: 15px 20px;
+    max-height: 78px;
+    overflow: hidden;
 }
 
 .icon_container{
@@ -85,7 +87,7 @@ margin: 0;
 /*  */
 
 .chat_container{
-    height: 627px;
+    height: calc(100% - 188px);
     background-color: white;
     overflow-y: scroll;
 }
@@ -104,6 +106,7 @@ margin: 0;
     height: 105px;
     border-bottom: 1px solid #E9EBEB;
     cursor: pointer;
+    padding-top: 5px;
 }
 
 .chat_user:hover{
@@ -135,7 +138,6 @@ margin: 0;
     font-size: 1.3rem;
 }
 
-/*  */
 
 .chat_active{
     background-image: url(./img/mine.jpg);
@@ -153,7 +155,7 @@ margin: 0;
 .received{
     text-align: left;
     background-color: white;
-    margin-right: 0;
+    margin-right: auto;
 }
 
 
@@ -178,13 +180,13 @@ margin: 0;
 .font_date{
     font-size: 0.7rem;
     right: 5px;
+    color:  #bbb9b9;
 }
 
 .message{
     display: flex;
     flex-direction: column;
-  /*   width: 0;
-    min-width: 250px; */
+    min-width: 190px; 
     margin-bottom: 15px;
     padding: 15px 10px;
     border-radius: 10px;
@@ -206,4 +208,23 @@ margin: 0;
 
 .lastmessagge{
     padding: 0.5rem 10px 0;
+    max-height: 55px;
+    overflow: hidden;
+}
+
+#chat_finder{
+    padding-left: 10px;
+}
+
+#input_chat{
+    padding-left: 10px;
+}
+
+.pb_5{
+    padding-bottom: 5px;
+}
+
+.lastdate{
+    right: 10px;
+    top: 0;
 }
