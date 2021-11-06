@@ -193,9 +193,13 @@ const app = new Vue({
 
         },
         /* elimina il messaggio basandosi sui due indici settati in precedenza */
+        /* Imposta il messaggio in anteprima nella lista degli utenti come eliminato se è l'ultimo, altrimenti lascia come impostato l'ultimo */
         deleteMessage() {
             app.contacts[ownerMessage].messages.splice(messageToRemove, 1)
-            app.contacts[ownerMessage].lastMessage = "Questo messaggio è stato eliminato"
+            if (app.contacts[ownerMessage].messages[messageToRemove] == app.contacts[ownerMessage].messages[app.contacts[ownerMessage].messages]) {
+                app.contacts[ownerMessage].lastMessage = "Questo messaggio è stato eliminato"
+            }
+
         },
         /* permette di togliere la visualizzazione del menù se viene cliccato un qualsiasi elemento del DOM */
         removeMenu() {
