@@ -115,7 +115,7 @@ const app = new Vue({
     methods: {
         /* Ottiene l'url dell'immagine partendo dalla reference nell'oggetto */
         getImageUrl(num) {
-            const imgUrl = `../img/avatar${num}.jpg`
+            const imgUrl = `./img/avatar${num}.jpg`
             return imgUrl;
         },
         /* Cambia tutti i valori relativi all'utente nella DOM per visualizzare l'evento corrente */
